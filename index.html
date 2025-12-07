@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amit Kumar - Geospatial Data Scientist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <title>Amit Kumar - Geotechnical Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary-color: #1a237e;
-            --accent-color: #00bcd4;
-            --success-color: #4caf50;
-            --warning-color: #ff9800;
-            --bg-primary: #0f1419;
-            --bg-secondary: #1a1e2e;
-            --card-bg: #232d3d;
-            --text-primary: #e0e0e0;
-            --text-secondary: #b0bec5;
-            --border-color: #2d3d4d;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
-            --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
-            --shadow-lg: 0 16px 40px rgba(0,0,0,0.5);
+            --primary-color: #2c3e50; /* Dark Slate */
+            --accent-color: #3498db; /* Professional Blue */
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
 
         * {
@@ -28,206 +23,151 @@
             padding: 0;
             box-sizing: border-box;
         }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--bg-color);
         }
 
-        /* Navbar */
+        /* Navigation Bar */
         nav {
-            position: fixed;
+            background: white;
+            padding: 15px 0;
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(26, 35, 55, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
             z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
         }
 
         .nav-logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #00bcd4, #0097a7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
+            font-size: 1.2rem;
+            color: var(--primary-color);
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
-            list-style: none;
+            gap: 25px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-secondary);
+            color: var(--text-main);
             font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            position: relative;
+            font-size: 0.9rem;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
             color: var(--accent-color);
         }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-color), transparent);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Header/Hero */
+        
+        /* Header / Hero Section */
         header {
-            margin-top: 70px;
-            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 50%, #00bcd4 100%);
-            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 80px 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 40px;
         }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-        }
-
-        header > * {
-            position: relative;
-            z-index: 2;
-        }
-
+        
         header h1 {
             font-family: 'Poppins', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            animation: slideInDown 0.8s ease;
+            font-size: 3em;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
         }
-
+        
         .tagline {
-            font-size: 1.3rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 2rem;
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            opacity: 0.9;
             font-weight: 300;
-            animation: fadeIn 1s ease 0.2s backwards;
         }
-
+        
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 20px;
             flex-wrap: wrap;
-            margin-top: 2rem;
-            animation: fadeIn 1s ease 0.4s backwards;
+            margin-top: 20px;
         }
-
+        
         .contact-btn {
-            background: rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.1);
             color: white;
-            padding: 0.75rem 1.5rem;
+            padding: 10px 20px;
             border-radius: 50px;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9em;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            border: 1px solid rgba(255,255,255,0.25);
-            backdrop-filter: blur(10px);
+            gap: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
         }
-
+        
         .contact-btn:hover {
             background: white;
-            color: #1a237e;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            color: var(--primary-color);
+            transform: translateY(-2px);
         }
-
-        /* Container */
+        
+        /* Main Container */
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 20px;
         }
-
-        /* Sections */
+        
         section {
             background: var(--card-bg);
-            margin: 3rem auto;
-            padding: 3rem;
-            border-radius: 16px;
-            border-left: 4px solid var(--accent-color);
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-            animation: fadeInUp 0.6s ease;
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent-color);
         }
-
-        section:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
+        
         section h2 {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
-            color: white;
-            margin-bottom: 2rem;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-bottom: 30px;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 10px;
         }
 
         section h2 i {
             color: var(--accent-color);
-            font-size: 2rem;
+        }
+        
+        /* Typography for Items */
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
         }
 
-        /* Items */
         .education-item, .experience-item, .research-item {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-            transition: all 0.3s ease;
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
         }
 
         .education-item:last-child, .experience-item:last-child, .research-item:last-child {
@@ -235,244 +175,297 @@
             margin-bottom: 0;
             padding-bottom: 0;
         }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
-        }
-
+        
         .title {
-            font-size: 1.25rem;
+            font-size: 1.2em;
             font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
+            color: var(--primary-color);
         }
-
+        
         .subtitle {
-            color: var(--text-secondary);
-            font-weight: 500;
+            color: var(--accent-color);
+            font-weight: 600;
             font-size: 1rem;
+            margin-top: 4px;
         }
-
+        
         .duration {
-            background: rgba(0, 188, 212, 0.1);
-            color: var(--accent-color);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid var(--accent-color);
-            display: inline-block;
+            background: #eef2f7;
+            color: var(--text-light);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 500;
         }
-
+        
         .cgpa {
-            color: var(--accent-color);
+            color: var(--text-main);
             font-weight: 600;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
+            font-size: 0.9em;
+            margin-top: 5px;
         }
-
+        
         .description {
-            color: var(--text-secondary);
-            margin-top: 1rem;
-            font-size: 0.95rem;
-            line-height: 1.8;
+            color: var(--text-light);
+            margin-top: 15px;
+            font-size: 0.95em;
         }
-
+        
         .description ul {
-            margin-left: 1.5rem;
-            margin-top: 1rem;
+            margin-left: 20px;
+            margin-top: 10px;
         }
-
+        
         .description li {
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
+            margin-bottom: 6px;
         }
-
-        /* Skills Grid */
+        
+        /* Skills Grid - New Design */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
-
-        .skill-category {
-            background: var(--bg-secondary);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .skill-category:hover {
-            border-color: var(--accent-color);
-            box-shadow: 0 0 20px rgba(0, 188, 212, 0.2);
-            transform: translateY(-2px);
-        }
-
+        
         .skill-category h3 {
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.15rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.1em;
             font-family: 'Poppins', sans-serif;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
-
+        
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.75rem;
+            gap: 10px;
         }
-
+        
         .skill-tag {
-            background: linear-gradient(135deg, rgba(0, 188, 212, 0.2), rgba(0, 176, 190, 0.2));
-            color: var(--accent-color);
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: 1px solid var(--accent-color);
-            transition: all 0.3s ease;
-            cursor: default;
+            background: #f0f4f8;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: background 0.2s;
         }
 
         .skill-tag:hover {
             background: var(--accent-color);
-            color: var(--bg-primary);
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4);
+            color: white;
         }
-
-        /* Reference Card */
+        
+        /* References */
         .reference-card {
-            background: var(--bg-secondary);
-            padding: 1.5rem;
-            border-radius: 12px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            border-left: 3px solid var(--accent-color);
-            transition: all 0.3s ease;
-        }
-
-        .reference-card:hover {
-            transform: translateX(10px);
-            box-shadow: var(--shadow-md);
+            gap: 15px;
         }
 
         .ref-icon {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--accent-color);
-            opacity: 0.8;
+            opacity: 0.5;
         }
-
+        
         /* Footer */
         footer {
             text-align: center;
-            color: var(--text-secondary);
-            padding: 3rem 2rem;
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border-color);
-            margin-top: 3rem;
-            font-size: 0.95rem;
+            color: var(--text-light);
+            padding: 40px 0;
+            font-size: 0.9em;
+            margin-top: 20px;
         }
-
-        /* Animations */
-        @keyframes slideInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Mobile Responsive */
+        
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
-
-            .tagline {
-                font-size: 1.1rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .nav-container {
-                justify-content: center;
-            }
-
-            section {
-                padding: 1.5rem;
-                margin: 2rem auto;
-            }
-
-            section h2 {
-                font-size: 1.4rem;
-            }
-
-            .item-header {
-                flex-direction: column;
-            }
-
-            .duration {
-                margin-top: 0.5rem;
-            }
-
-            .contact-btn {
-                font-size: 0.85rem;
-                padding: 0.6rem 1rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .reference-card {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .contact-info {
-                gap: 0.75rem;
-            }
+            header h1 { font-size: 2em; }
+            .nav-links { display: none; } /* Simplified for mobile */
+            .nav-container { justify-content: center; }
+            .item-header { flex-direction: column; gap: 5px; }
+            .duration { margin-top: 5px; display: inline-block; }
+            section { padding: 25px; }
         }
+    </style>
+</head>
+<body>
 
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">Amit Kumar</div>
+            <div class="nav-links">
+                <a href="#education">Education</a>
+                <a href="#research">Research</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+            </div>
+        </div>
+    </nav>
 
-            .tagline {
-                font-size: 1rem;
+    <header>
+        <h1>Amit Kumar</h1>
+        <p class="tagline">Geotechnical Engineer | M.Tech Student | Researcher</p>
+        
+        <div class="contact-info">
+            <a href="tel:9795883571" class="contact-btn"><i class="fas fa-phone"></i> +91 9795883571</a>
+            <a href="mailto:ak97958835@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> Email Me</a>
+            <a href="https://linkedin.com/in/amit13kumar" class="contact-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <span class="contact-btn"><i class="fas fa-map-marker-alt"></i> UP, India</span>
+        </div>
+    </header>
+    
+    <div class="container">
+        
+        <section id="objective">
+            <h2><i class="fas fa-user-tie"></i> Professional Objective</h2>
+            <p class="description">Detail-oriented Geotechnical Engineering postgraduate with strong hands-on experience in laboratory testing, soil characterization, and field supervision. Skilled in evaluating strength behavior, swelling characteristics, and crack development in soil-based materials. Seeking an entry-level position in geotechnical engineering or infrastructure development where technical knowledge can contribute to safe project execution.</p>
+        </section>
+        
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            
+            <div class="education-item">
+                <div class="item-header">
+                    <div>
+                        <div class="title">M.Tech in Geotechnical Engineering</div>
+                        <div class="subtitle">Indian Institute of Technology (IIT) Patna</div>
+                    </div>
+                    <div class="duration">2024 - 2026 (Ongoing)</div>
+                </div>
+                <div class="cgpa">Current CPI: 6.7</div>
+                <div class="description">
+                    <strong>Thesis:</strong> Strength and Cracking Behavior of Bentonite-Based Mixtures for HLW Repositories. Investigating BSG and BSGF mixtures.
+                </div>
+            </div>
+            
+            <div class="education-item">
+                <div class="item-header">
+                    <div>
+                        <div class="title">B.Tech in Civil Engineering</div>
+                        <div class="subtitle">Rajkiya Engineering College, Ambedkar Nagar</div>
+                    </div>
+                    <div class="duration">2018 - 2022</div>
+                </div>
+                <div class="cgpa">CGPA: 7.43</div>
+                <div class="description">
+                    <strong>Project:</strong> Soil Stabilization Using Fly Ash. Evaluated enhancement in engineering properties under varying proportions.
+                </div>
+            </div>
+        </section>
+        
+        <section id="research">
+            <h2><i class="fas fa-flask"></i> Research Experience</h2>
+            
+            <div class="research-item">
+                <div class="item-header">
+                    <div>
+                        <div class="title">M.Tech Research Project</div>
+                        <div class="subtitle">IIT Patna, India</div>
+                    </div>
+                    <div class="duration">2024 - Present</div>
+                </div>
+                <div class="description">
+                    <strong>Supervisor:</strong> Dr. Ramakrishna Bag
+                    <ul>
+                        <li>Identifying optimum compositions of BSG and BSGF mixtures using Taguchi optimization.</li>
+                        <li>Analyzing crack geometry in bentonite mixtures using Digital Image Processing (MATLAB/Python).</li>
+                        <li>Determining UCS and swelling pressure of engineered mixtures.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="title">Teaching Assistant</div>
+                        <div class="subtitle">Foundation Engineering Lab - IIT Patna</div>
+                    </div>
+                    <div class="duration">2024 - Present</div>
+                </div>
+                <div class="description">
+                    <ul>
+                        <li>Assisting students during lab sessions and guiding testing procedures.</li>
+                        <li>Ensuring safe, efficient handling of equipment and sampling protocols.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="title">Site Engineer</div>
+                        <div class="subtitle">MS Shanti Construction</div>
+                    </div>
+                    <div class="duration">Aug 2022 - Sep 2023</div>
+                </div>
+                <div class="description">
+                    <ul>
+                        <li>Worked on road construction and interlocking works.</li>
+                        <li>Supervised field activities, material handling, and on-site quality control.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h2><i class="fas fa-tools"></i> Technical Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Analysis & Coding</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Excel Analysis</span>
+                        <span class="skill-tag">Curve Fitting</span>
+                        <span class="skill-tag">Image Processing</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Simulation Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AutoCAD</span>
+                        <span class="skill-tag">STAAD Pro</span>
+                        <span class="skill-tag">RS2 (RocScience)</span>
+                        <span class="skill-tag">Slide</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Lab Expertise</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Soil Classification</span>
+                        <span class="skill-tag">Compaction Testing</span>
+                        <span class="skill-tag">UCS</span>
+                        <span class="skill-tag">Swelling Pressure</span>
+                        <span class="skill-tag">Instrumentation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="references">
+            <h2><i class="fas fa-quote-right"></i> References</h2>
+            <div class="reference-card">
+                <div class="ref-icon"><i class="fas fa-user-circle"></i></div>
+                <div>
+                    <div class="title">Dr. Ramakrishna Bag</div>
+                    <div class="subtitle">Associate Professor | IIT Patna</div>
+                    <div class="description" style="margin-top: 5px;">rkbag@iitp.ac.in</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Amit Kumar. All rights reserved.</p>
+    </footer>
+</body>
+</html>

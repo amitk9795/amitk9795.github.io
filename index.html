@@ -4,155 +4,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amit Kumar - Geotechnical Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-color: #2c3e50; /* Dark Slate */
-            --accent-color: #3498db; /* Professional Blue */
-            --bg-color: #f4f7f6;
+            --primary-color: #312e81; /* Indigo 900 - Deep, Academic */
+            --accent-color: #4f46e5; /* Indigo 600 - Vibrant, Technical */
+            --accent-hover: #4338ca;
+            --bg-color: #eef2ff; /* Very light cool tint */
             --card-bg: #ffffff;
-            --text-main: #333333;
-            --text-light: #666666;
-            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --text-main: #1e293b; /* Slate 800 */
+            --text-light: #475569; /* Slate 600 */
+            --border-color: #e0e7ff;
+            --shadow: 0 4px 6px -1px rgba(49, 46, 129, 0.05), 0 2px 4px -1px rgba(49, 46, 129, 0.03);
+            --shadow-hover: 0 10px 15px -3px rgba(49, 46, 129, 0.1), 0 4px 6px -2px rgba(49, 46, 129, 0.05);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
         }
         
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.7;
+            line-height: 1.6;
             color: var(--text-main);
             background-color: var(--bg-color);
+            background-image: linear-gradient(#e0e7ff 1px, transparent 1px), linear-gradient(90deg, #e0e7ff 1px, transparent 1px);
+            background-size: 40px 40px;
         }
 
         /* Navigation Bar */
         nav {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
         }
 
         .nav-container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         .nav-logo {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--primary-color);
+            letter-spacing: -0.5px;
+            border: 2px solid var(--primary-color);
+            padding: 2px 10px;
+            border-radius: 4px;
         }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 32px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-main);
+            color: var(--text-light);
             font-weight: 500;
             font-size: 0.9rem;
-            transition: color 0.3s;
+            transition: color 0.2s;
+            position: relative;
         }
 
         .nav-links a:hover {
             color: var(--accent-color);
         }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
         
         /* Header / Hero Section */
         header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(135deg, #312e81 0%, #4338ca 100%);
             color: white;
-            padding: 80px 20px;
+            padding: 80px 24px;
             text-align: center;
             margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(49, 46, 129, 0.25);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+            padding-bottom: 100px;
         }
         
         header h1 {
             font-family: 'Poppins', sans-serif;
-            font-size: 3em;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
+            font-size: 3.5rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
         .tagline {
-            font-size: 1.2em;
-            margin-bottom: 25px;
-            opacity: 0.9;
+            font-size: 1.25rem;
+            margin-bottom: 32px;
+            color: #e0e7ff;
             font-weight: 300;
+            letter-spacing: 0.5px;
         }
         
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 16px;
             flex-wrap: wrap;
-            margin-top: 20px;
         }
         
         .contact-btn {
             background: rgba(255,255,255,0.1);
             color: white;
             padding: 10px 20px;
-            border-radius: 50px;
+            border-radius: 6px;
             text-decoration: none;
-            font-size: 0.9em;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 8px;
             border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            font-weight: 500;
         }
         
         .contact-btn:hover {
             background: white;
             color: var(--primary-color);
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
         
         /* Main Container */
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
+            padding-bottom: 60px;
+            margin-top: -40px; /* Overlap header slightly */
+            position: relative;
+            z-index: 10;
         }
         
         section {
             background: var(--card-bg);
-            margin-bottom: 30px;
+            margin-bottom: 32px;
             padding: 40px;
             border-radius: 12px;
             box-shadow: var(--shadow);
-            border-top: 4px solid var(--accent-color);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-color);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        section:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
         }
         
         section h2 {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.5em;
+            font-size: 1.5rem;
             color: var(--primary-color);
-            margin-bottom: 30px;
+            margin-bottom: 32px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         section h2 i {
             color: var(--accent-color);
+            background: #eef2ff;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 1rem;
         }
         
         /* Typography for Items */
@@ -161,23 +214,34 @@
             justify-content: space-between;
             align-items: flex-start;
             flex-wrap: wrap;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            gap: 10px;
         }
 
         .education-item, .experience-item, .research-item {
-            margin-bottom: 35px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #eee;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        /* Vertical line connector for timeline effect */
+        .education-item:not(:last-child)::after, 
+        .experience-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50px;
+            bottom: -30px;
+            width: 2px;
+            background: #f1f5f9;
+            display: none; 
         }
 
         .education-item:last-child, .experience-item:last-child, .research-item:last-child {
-            border-bottom: none;
             margin-bottom: 0;
-            padding-bottom: 0;
         }
         
         .title {
-            font-size: 1.2em;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--primary-color);
         }
@@ -185,90 +249,115 @@
         .subtitle {
             color: var(--accent-color);
             font-weight: 600;
-            font-size: 1rem;
-            margin-top: 4px;
+            font-size: 0.95rem;
+            margin-top: 2px;
         }
         
         .duration {
-            background: #eef2f7;
+            background: #f8fafc;
             color: var(--text-light);
             padding: 4px 12px;
+            border: 1px solid #e2e8f0;
             border-radius: 4px;
-            font-size: 0.85em;
-            font-weight: 500;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
         }
         
         .cgpa {
             color: var(--text-main);
             font-weight: 600;
-            font-size: 0.9em;
-            margin-top: 5px;
+            font-size: 0.9rem;
+            margin-top: 4px;
+            display: inline-block;
+            background: #eef2ff;
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
         }
         
         .description {
             color: var(--text-light);
-            margin-top: 15px;
-            font-size: 0.95em;
+            margin-top: 12px;
+            font-size: 0.95rem;
         }
         
         .description ul {
             margin-left: 20px;
-            margin-top: 10px;
+            margin-top: 8px;
         }
         
         .description li {
             margin-bottom: 6px;
+            padding-left: 4px;
+        }
+
+        .description li::marker {
+            color: var(--accent-color);
         }
         
-        /* Skills Grid - New Design */
+        /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
         
         .skill-category h3 {
             color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.1em;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
             font-family: 'Poppins', sans-serif;
+            font-weight: 600;
         }
         
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
         
         .skill-tag {
-            background: #f0f4f8;
-            color: var(--primary-color);
+            background: #ffffff;
+            color: var(--text-main);
             padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 0.9em;
+            border-radius: 4px;
+            font-size: 0.85rem;
             font-weight: 500;
-            transition: background 0.2s;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            transition: all 0.2s;
         }
 
         .skill-tag:hover {
-            background: var(--accent-color);
-            color: white;
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
         
         /* References */
         .reference-card {
-            background: #f8f9fa;
-            padding: 20px;
+            background: #f8fafc;
+            padding: 24px;
             border-radius: 8px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
+            border: 1px solid #e2e8f0;
         }
 
         .ref-icon {
-            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            background: #eef2ff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: var(--accent-color);
-            opacity: 0.5;
+            font-size: 1.5rem;
         }
         
         /* Footer */
@@ -276,17 +365,34 @@
             text-align: center;
             color: var(--text-light);
             padding: 40px 0;
-            font-size: 0.9em;
-            margin-top: 20px;
+            font-size: 0.9rem;
         }
         
         @media (max-width: 768px) {
-            header h1 { font-size: 2em; }
-            .nav-links { display: none; } /* Simplified for mobile */
+            header { padding: 60px 20px 100px 20px; clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%); }
+            header h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
             .nav-container { justify-content: center; }
-            .item-header { flex-direction: column; gap: 5px; }
-            .duration { margin-top: 5px; display: inline-block; }
-            section { padding: 25px; }
+            .item-header { flex-direction: column; gap: 4px; }
+            .duration { margin-top: 4px; display: inline-block; }
+            section { padding: 24px; }
+            .contact-btn { width: 100%; justify-content: center; }
+        }
+
+        /* Print Styles */
+        @media print {
+            body { background: white; color: black; }
+            nav, footer { display: none; }
+            .container { max-width: 100%; padding: 0; box-shadow: none; margin-top: 0; }
+            section { box-shadow: none; border: none; border-left: none; padding: 0; margin-bottom: 20px; break-inside: avoid; }
+            header { background: none; color: black; padding: 20px 0; box-shadow: none; border-bottom: 2px solid #000; margin-bottom: 20px; clip-path: none; padding-bottom: 20px; }
+            header h1 { color: black; margin-bottom: 0; text-shadow: none; }
+            .tagline { color: #444; margin-bottom: 10px; }
+            .contact-btn { background: none; color: black; border: none; padding: 0; font-size: 0.9rem; box-shadow: none; }
+            .contact-info { gap: 15px; }
+            a { text-decoration: none; color: black; }
+            .skill-tag { border: 1px solid #ddd; box-shadow: none; }
+            .ref-icon { border: 1px solid #ddd; }
         }
     </style>
 </head>
@@ -296,6 +402,7 @@
         <div class="nav-container">
             <div class="nav-logo">Amit Kumar</div>
             <div class="nav-links">
+                <a href="#objective">Objective</a>
                 <a href="#education">Education</a>
                 <a href="#research">Research</a>
                 <a href="#experience">Experience</a>
@@ -306,13 +413,13 @@
 
     <header>
         <h1>Amit Kumar</h1>
-        <p class="tagline">Geotechnical Engineer | M.Tech Student | Researcher</p>
+        <p class="tagline">Geotechnical Engineer | M.Tech Candidate | Graduate Researcher</p>
         
         <div class="contact-info">
             <a href="tel:9795883571" class="contact-btn"><i class="fas fa-phone"></i> +91 9795883571</a>
-            <a href="mailto:ak97958835@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> Email Me</a>
-            <a href="https://linkedin.com/in/amit13kumar" class="contact-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <span class="contact-btn"><i class="fas fa-map-marker-alt"></i> UP, India</span>
+            <a href="mailto:ak97958835@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> ak97958835@gmail.com</a>
+            <a href="https://linkedin.com/in/amit13kumar" target="_blank" class="contact-btn"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+            <span class="contact-btn"><i class="fas fa-map-marker-alt"></i> Uttar Pradesh, India</span>
         </div>
     </header>
     
@@ -320,7 +427,9 @@
         
         <section id="objective">
             <h2><i class="fas fa-user-tie"></i> Professional Objective</h2>
-            <p class="description">Detail-oriented Geotechnical Engineering postgraduate with strong hands-on experience in laboratory testing, soil characterization, and field supervision. Skilled in evaluating strength behavior, swelling characteristics, and crack development in soil-based materials. Seeking an entry-level position in geotechnical engineering or infrastructure development where technical knowledge can contribute to safe project execution.</p>
+            <p class="description">
+                Detail-oriented M.Tech Scholar in Geotechnical Engineering with strong hands-on expertise in laboratory testing, soil characterization, and field supervision. Proficient in evaluating strength behavior, swelling characteristics, and crack patterns in soil-based materials. Seeking a challenging role in geotechnical engineering or infrastructure development to contribute towards safe and efficient project execution.
+            </p>
         </section>
         
         <section id="education">
@@ -332,11 +441,15 @@
                         <div class="title">M.Tech in Geotechnical Engineering</div>
                         <div class="subtitle">Indian Institute of Technology (IIT) Patna</div>
                     </div>
-                    <div class="duration">2024 - 2026 (Ongoing)</div>
+                    <div class="duration">2024 - Expected 2026</div>
                 </div>
                 <div class="cgpa">Current CPI: 6.7</div>
                 <div class="description">
-                    <strong>Thesis:</strong> Strength and Cracking Behavior of Bentonite-Based Mixtures for HLW Repositories. Investigating BSG and BSGF mixtures.
+                    <strong>Thesis:</strong> Strength and Cracking Behavior of Bentonite-Based Mixtures for HLW Repositories.
+                    <ul>
+                        <li>Investigating the mechanical and hydraulic properties of BSG and BSGF mixtures.</li>
+                        <li>Utilizing advanced statistical methods for mixture optimization.</li>
+                    </ul>
                 </div>
             </div>
             
@@ -350,18 +463,21 @@
                 </div>
                 <div class="cgpa">CGPA: 7.43</div>
                 <div class="description">
-                    <strong>Project:</strong> Soil Stabilization Using Fly Ash. Evaluated enhancement in engineering properties under varying proportions.
+                    <strong>Project:</strong> Soil Stabilization Using Fly Ash. 
+                    <ul>
+                        <li>Evaluated enhancement in engineering properties of local soil under varying fly ash proportions to improve subgrade stability.</li>
+                    </ul>
                 </div>
             </div>
         </section>
         
         <section id="research">
-            <h2><i class="fas fa-flask"></i> Research Experience</h2>
+            <h2><i class="fas fa-microscope"></i> Research Experience</h2>
             
             <div class="research-item">
                 <div class="item-header">
                     <div>
-                        <div class="title">M.Tech Research Project</div>
+                        <div class="title">Graduate Research Assistant</div>
                         <div class="subtitle">IIT Patna, India</div>
                     </div>
                     <div class="duration">2024 - Present</div>
@@ -369,9 +485,9 @@
                 <div class="description">
                     <strong>Supervisor:</strong> Dr. Ramakrishna Bag
                     <ul>
-                        <li>Identifying optimum compositions of BSG and BSGF mixtures using Taguchi optimization.</li>
-                        <li>Analyzing crack geometry in bentonite mixtures using Digital Image Processing (MATLAB/Python).</li>
-                        <li>Determining UCS and swelling pressure of engineered mixtures.</li>
+                        <li>Identified optimum compositions of BSG and BSGF mixtures using Taguchi optimization techniques.</li>
+                        <li>Analyzed crack geometry and propagation in bentonite mixtures using Digital Image Processing (MATLAB/Python).</li>
+                        <li>Determined Unconfined Compressive Strength (UCS) and swelling pressure of engineered mixtures for repository safety.</li>
                     </ul>
                 </div>
             </div>
@@ -390,8 +506,8 @@
                 </div>
                 <div class="description">
                     <ul>
-                        <li>Assisting students during lab sessions and guiding testing procedures.</li>
-                        <li>Ensuring safe, efficient handling of equipment and sampling protocols.</li>
+                        <li>Mentored undergraduate students during laboratory sessions, demonstrating proper testing procedures for soil mechanics.</li>
+                        <li>Managed equipment inventory and enforced safety protocols to ensure efficient sampling and testing workflows.</li>
                     </ul>
                 </div>
             </div>
@@ -406,8 +522,8 @@
                 </div>
                 <div class="description">
                     <ul>
-                        <li>Worked on road construction and interlocking works.</li>
-                        <li>Supervised field activities, material handling, and on-site quality control.</li>
+                        <li>Executed road construction projects and interlocking pavement works ensuring adherence to design specifications.</li>
+                        <li>Supervised field activities, including material quality control, resource allocation, and coordination with labor teams.</li>
                     </ul>
                 </div>
             </div>
@@ -424,7 +540,7 @@
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">Excel Analysis</span>
                         <span class="skill-tag">Curve Fitting</span>
-                        <span class="skill-tag">Image Processing</span>
+                        <span class="skill-tag">Digital Image Processing</span>
                     </div>
                 </div>
                 
@@ -443,7 +559,7 @@
                     <div class="skill-tags">
                         <span class="skill-tag">Soil Classification</span>
                         <span class="skill-tag">Compaction Testing</span>
-                        <span class="skill-tag">UCS</span>
+                        <span class="skill-tag">UCS Testing</span>
                         <span class="skill-tag">Swelling Pressure</span>
                         <span class="skill-tag">Instrumentation</span>
                     </div>
@@ -458,14 +574,16 @@
                 <div>
                     <div class="title">Dr. Ramakrishna Bag</div>
                     <div class="subtitle">Associate Professor | IIT Patna</div>
-                    <div class="description" style="margin-top: 5px;">rkbag@iitp.ac.in</div>
+                    <div class="description" style="margin-top: 5px;">
+                        <a href="mailto:rkbag@iitp.ac.in" style="text-decoration: none; color: var(--accent-color);">rkbag@iitp.ac.in</a>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
     
     <footer>
-        <p>&copy; 2024 Amit Kumar. All rights reserved.</p>
+        <p>&copy; 2025 Amit Kumar. All rights reserved.</p>
     </footer>
 </body>
 </html>

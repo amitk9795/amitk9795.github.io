@@ -4,7 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amit Kumar - Geotechnical Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
+        :root {
+            --primary-color: #2c3e50; /* Dark Slate */
+            --accent-color: #3498db; /* Professional Blue */
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,131 +25,190 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
         }
         
+        /* Header / Hero Section */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
-            padding: 60px 0;
+            padding: 80px 20px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
         }
         
         header h1 {
-            font-size: 2.5em;
+            font-family: 'Poppins', sans-serif;
+            font-size: 3em;
             margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
         
         .tagline {
-            font-size: 1.1em;
-            margin-bottom: 15px;
+            font-size: 1.2em;
+            margin-bottom: 25px;
             opacity: 0.9;
+            font-weight: 300;
         }
         
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
-            font-size: 0.95em;
+            margin-top: 20px;
         }
         
-        .contact-info a {
+        .contact-btn {
+            background: rgba(255,255,255,0.1);
             color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
             text-decoration: none;
-            transition: opacity 0.3s;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
         }
         
-        .contact-info a:hover {
-            opacity: 0.8;
+        .contact-btn:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-2px);
         }
         
+        /* Main Container */
         .container {
-            max-width: 1200px;
-            margin: 40px auto;
+            max-width: 1000px;
+            margin: 0 auto;
             padding: 0 20px;
         }
         
         section {
-            background: white;
+            background: var(--card-bg);
             margin-bottom: 30px;
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent-color);
         }
         
         section h2 {
-            font-size: 1.8em;
-            color: #667eea;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #667eea;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        section h2 i {
+            color: var(--accent-color);
         }
         
-        .education-item,
-        .experience-item,
-        .research-item {
-            margin-bottom: 30px;
-            padding-bottom: 25px;
+        /* Typography for Items */
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .education-item, .experience-item, .research-item {
+            margin-bottom: 35px;
+            padding-bottom: 30px;
             border-bottom: 1px solid #eee;
         }
-        
-        .education-item:last-child,
-        .experience-item:last-child,
-        .research-item:last-child {
+
+        .education-item:last-child, .experience-item:last-child, .research-item:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
         }
         
-        .degree {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
+        .title {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--primary-color);
         }
         
-        .institution {
-            color: #764ba2;
+        .subtitle {
+            color: var(--accent-color);
             font-weight: 600;
-            margin-bottom: 5px;
+            font-size: 1rem;
+            margin-top: 4px;
         }
         
         .duration {
-            color: #777;
-            font-size: 0.95em;
-            margin-bottom: 10px;
+            background: #eef2f7;
+            color: var(--text-light);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 500;
         }
         
         .cgpa {
-            color: #667eea;
+            color: var(--text-main);
             font-weight: 600;
-        }
-        
-        .job-title {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
-        }
-        
-        .company {
-            color: #764ba2;
-            font-weight: 600;
-            margin-bottom: 5px;
+            font-size: 0.9em;
+            margin-top: 5px;
         }
         
         .description {
-            color: #555;
-            margin-top: 10px;
-            line-height: 1.8;
+            color: var(--text-light);
+            margin-top: 15px;
+            font-size: 0.95em;
         }
         
         .description ul {
@@ -145,247 +217,248 @@
         }
         
         .description li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         
+        /* Skills Grid - New Design */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .skill-category {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
         
         .skill-category h3 {
-            color: #667eea;
-            margin-bottom: 12px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
             font-size: 1.1em;
+            font-family: 'Poppins', sans-serif;
         }
         
-        .skill-category ul {
-            list-style: none;
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
         
-        .skill-category li {
-            color: #555;
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
+        .skill-tag {
+            background: #f0f4f8;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent-color);
+            color: white;
         }
         
-        .skill-category li:before {
-            content: "▸";
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-        }
-        
-        .references {
+        /* References */
+        .reference-card {
             background: #f8f9fa;
             padding: 20px;
             border-radius: 8px;
-            border-left: 4px solid #764ba2;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .ref-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            opacity: 0.5;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            color: var(--text-light);
+            padding: 40px 0;
+            font-size: 0.9em;
             margin-top: 20px;
         }
         
-        .reference-item {
-            margin-bottom: 15px;
-        }
-        
-        .reference-name {
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .reference-title {
-            color: #764ba2;
-            font-size: 0.95em;
-        }
-        
-        .reference-contact {
-            color: #555;
-            font-size: 0.9em;
-        }
-        
-        footer {
-            text-align: center;
-            color: white;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-        
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-            
-            .contact-info {
-                gap: 15px;
-                flex-direction: column;
-            }
-            
-            section {
-                padding: 25px;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
+            header h1 { font-size: 2em; }
+            .nav-links { display: none; } /* Simplified for mobile */
+            .nav-container { justify-content: center; }
+            .item-header { flex-direction: column; gap: 5px; }
+            .duration { margin-top: 5px; display: inline-block; }
+            section { padding: 25px; }
         }
     </style>
 </head>
 <body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">Amit Kumar</div>
+            <div class="nav-links">
+                <a href="#education">Education</a>
+                <a href="#research">Research</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+            </div>
+        </div>
+    </nav>
+
     <header>
         <h1>Amit Kumar</h1>
         <p class="tagline">Geotechnical Engineer | M.Tech Student | Researcher</p>
+        
         <div class="contact-info">
-            <span>📱 9795883571</span>
-            <span>📧 ak97958835@gmail.com</span>
-            <span>📍 Uttar Pradesh, India</span>
-            <span><a href="https://linkedin.com/in/amit13kumar">LinkedIn</a></span>
+            <a href="tel:9795883571" class="contact-btn"><i class="fas fa-phone"></i> +91 9795883571</a>
+            <a href="mailto:ak97958835@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> Email Me</a>
+            <a href="https://linkedin.com/in/amit13kumar" class="contact-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <span class="contact-btn"><i class="fas fa-map-marker-alt"></i> UP, India</span>
         </div>
     </header>
     
     <div class="container">
+        
         <section id="objective">
-            <h2>Professional Objective</h2>
-            <p>Detail-oriented Geotechnical Engineering postgraduate with strong hands-on experience in laboratory testing, soil characterization, and field supervision. Skilled in evaluating strength behavior, swelling characteristics, and crack development in soil-based materials. Seeking an entry-level position in geotechnical engineering, civil construction, or infrastructure development where technical knowledge, site experience, and analytical skills can contribute to safe and efficient project execution.</p>
+            <h2><i class="fas fa-user-tie"></i> Professional Objective</h2>
+            <p class="description">Detail-oriented Geotechnical Engineering postgraduate with strong hands-on experience in laboratory testing, soil characterization, and field supervision. Skilled in evaluating strength behavior, swelling characteristics, and crack development in soil-based materials. Seeking an entry-level position in geotechnical engineering or infrastructure development where technical knowledge can contribute to safe project execution.</p>
         </section>
         
         <section id="education">
-            <h2>Education</h2>
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
             
             <div class="education-item">
-                <div class="degree">M.Tech in Geotechnical Engineering</div>
-                <div class="institution">Indian Institute of Technology (IIT) Patna, India</div>
-                <div class="duration">2024 - 2026 (Ongoing)</div>
+                <div class="item-header">
+                    <div>
+                        <div class="title">M.Tech in Geotechnical Engineering</div>
+                        <div class="subtitle">Indian Institute of Technology (IIT) Patna</div>
+                    </div>
+                    <div class="duration">2024 - 2026 (Ongoing)</div>
+                </div>
                 <div class="cgpa">Current CPI: 6.7</div>
                 <div class="description">
-                    <strong>Thesis:</strong> Strength and Cracking Behavior of Bentonite-Based Mixtures for High-Level Radioactive Waste (HLW) Repositories
-                    <ul>
-                        <li>Investigating bentonite-sand-graphite (BSG) and bentonite-sand-graphite-fiber (BSGF) mixtures</li>
-                    </ul>
+                    <strong>Thesis:</strong> Strength and Cracking Behavior of Bentonite-Based Mixtures for HLW Repositories. Investigating BSG and BSGF mixtures.
                 </div>
             </div>
             
             <div class="education-item">
-                <div class="degree">B.Tech in Civil Engineering</div>
-                <div class="institution">Rajkiya Engineering College, Ambedkar Nagar, Uttar Pradesh, India</div>
-                <div class="duration">2018 - 2022</div>
+                <div class="item-header">
+                    <div>
+                        <div class="title">B.Tech in Civil Engineering</div>
+                        <div class="subtitle">Rajkiya Engineering College, Ambedkar Nagar</div>
+                    </div>
+                    <div class="duration">2018 - 2022</div>
+                </div>
                 <div class="cgpa">CGPA: 7.43</div>
                 <div class="description">
-                    <strong>Bachelor Thesis:</strong> Soil Stabilization Using Fly Ash in Various Compositions
-                    <ul>
-                        <li>Studied mechanical behavior improvement of soil using fly ash</li>
-                        <li>Evaluated enhancement in engineering properties under varying proportions</li>
-                    </ul>
+                    <strong>Project:</strong> Soil Stabilization Using Fly Ash. Evaluated enhancement in engineering properties under varying proportions.
                 </div>
             </div>
         </section>
         
         <section id="research">
-            <h2>Research Experience</h2>
+            <h2><i class="fas fa-flask"></i> Research Experience</h2>
             
             <div class="research-item">
-                <div class="job-title">M.Tech Research Project</div>
-                <div class="company">IIT Patna, India</div>
-                <div class="duration">2024 - Present</div>
+                <div class="item-header">
+                    <div>
+                        <div class="title">M.Tech Research Project</div>
+                        <div class="subtitle">IIT Patna, India</div>
+                    </div>
+                    <div class="duration">2024 - Present</div>
+                </div>
                 <div class="description">
                     <strong>Supervisor:</strong> Dr. Ramakrishna Bag
                     <ul>
-                        <li>Identifying optimum compositions of BSG and BSGF mixtures using laboratory testing and Taguchi optimization</li>
-                        <li>Analyzing crack geometry and propagation in bentonite-based mixtures using Digital Image Processing</li>
-                        <li>Determining UCS and swelling pressure of engineered mixtures for evaluating strength performance</li>
+                        <li>Identifying optimum compositions of BSG and BSGF mixtures using Taguchi optimization.</li>
+                        <li>Analyzing crack geometry in bentonite mixtures using Digital Image Processing (MATLAB/Python).</li>
+                        <li>Determining UCS and swelling pressure of engineered mixtures.</li>
                     </ul>
-                    <strong>Tools & Techniques:</strong> MATLAB, Python, Image Processing, Laboratory Geotechnical Testing
                 </div>
             </div>
         </section>
         
         <section id="experience">
-            <h2>Professional Experience</h2>
+            <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
             
             <div class="experience-item">
-                <div class="job-title">Teaching Assistant</div>
-                <div class="company">Foundation Engineering Laboratory - IIT Patna</div>
-                <div class="duration">2024 - Present</div>
+                <div class="item-header">
+                    <div>
+                        <div class="title">Teaching Assistant</div>
+                        <div class="subtitle">Foundation Engineering Lab - IIT Patna</div>
+                    </div>
+                    <div class="duration">2024 - Present</div>
+                </div>
                 <div class="description">
                     <ul>
-                        <li>Assisted students during lab sessions and guided them on testing procedures</li>
-                        <li>Ensured safe, efficient handling of equipment and sampling protocols</li>
+                        <li>Assisting students during lab sessions and guiding testing procedures.</li>
+                        <li>Ensuring safe, efficient handling of equipment and sampling protocols.</li>
                     </ul>
                 </div>
             </div>
             
             <div class="experience-item">
-                <div class="job-title">Site Engineer</div>
-                <div class="company">MS Shanti Construction</div>
-                <div class="duration">August 2022 - September 2023</div>
+                <div class="item-header">
+                    <div>
+                        <div class="title">Site Engineer</div>
+                        <div class="subtitle">MS Shanti Construction</div>
+                    </div>
+                    <div class="duration">Aug 2022 - Sep 2023</div>
+                </div>
                 <div class="description">
                     <ul>
-                        <li>Worked on road construction and interlocking works</li>
-                        <li>Supervised field activities, material handling, and on-site quality control</li>
+                        <li>Worked on road construction and interlocking works.</li>
+                        <li>Supervised field activities, material handling, and on-site quality control.</li>
                     </ul>
                 </div>
             </div>
         </section>
         
         <section id="skills">
-            <h2>Technical Skills</h2>
+            <h2><i class="fas fa-tools"></i> Technical Skills</h2>
             
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Programming & Analysis Tools</h3>
-                    <ul>
-                        <li>MATLAB</li>
-                        <li>Python</li>
-                        <li>Excel Data Analysis</li>
-                        <li>Statistical Analysis</li>
-                        <li>Curve Fitting & Regression</li>
-                        <li>Data Visualization</li>
-                        <li>Digital Image Processing</li>
-                    </ul>
+                    <h3>Analysis & Coding</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Excel Analysis</span>
+                        <span class="skill-tag">Curve Fitting</span>
+                        <span class="skill-tag">Image Processing</span>
+                    </div>
                 </div>
                 
                 <div class="skill-category">
-                    <h3>Engineering Simulation Software</h3>
-                    <ul>
-                        <li>AutoCAD</li>
-                        <li>STAAD Pro</li>
-                        <li>RS2 (RocScience)</li>
-                        <li>Slide (RocScience)</li>
-                    </ul>
+                    <h3>Simulation Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AutoCAD</span>
+                        <span class="skill-tag">STAAD Pro</span>
+                        <span class="skill-tag">RS2 (RocScience)</span>
+                        <span class="skill-tag">Slide</span>
+                    </div>
                 </div>
                 
                 <div class="skill-category">
-                    <h3>Laboratory Expertise</h3>
-                    <ul>
-                        <li>Soil Classification & Index Properties</li>
-                        <li>Compaction Testing</li>
-                        <li>UCS (Unconfined Compressive Strength)</li>
-                        <li>Swelling Pressure Tests</li>
-                        <li>Sampling & Specimen Preparation</li>
-                        <li>Geotechnical Instrumentation</li>
-                    </ul>
+                    <h3>Lab Expertise</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Soil Classification</span>
+                        <span class="skill-tag">Compaction Testing</span>
+                        <span class="skill-tag">UCS</span>
+                        <span class="skill-tag">Swelling Pressure</span>
+                        <span class="skill-tag">Instrumentation</span>
+                    </div>
                 </div>
             </div>
         </section>
         
         <section id="references">
-            <h2>References</h2>
-            
-            <div class="references">
-                <div class="reference-item">
-                    <div class="reference-name">Dr. Ramakrishna Bag</div>
-                    <div class="reference-title">Associate Professor</div>
-                    <div class="reference-contact">Indian Institute of Technology Patna | rkbag@iitp.ac.in</div>
+            <h2><i class="fas fa-quote-right"></i> References</h2>
+            <div class="reference-card">
+                <div class="ref-icon"><i class="fas fa-user-circle"></i></div>
+                <div>
+                    <div class="title">Dr. Ramakrishna Bag</div>
+                    <div class="subtitle">Associate Professor | IIT Patna</div>
+                    <div class="description" style="margin-top: 5px;">rkbag@iitp.ac.in</div>
                 </div>
             </div>
         </section>
